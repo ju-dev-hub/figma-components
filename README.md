@@ -50,11 +50,11 @@ npm start && npm run server
 
 Abrir no navegador `http://localhost:3000/`. A aplicação será recarregada automaticamente após salvar qualquer alteração de código.
 
-### Extraindo tokens e iconografia
+### Extraindo estilos de componentes
 
-Digite no campo *Figma Token* o token de acesso e no campo *Figma ID* o id do arquivo do seu projeto. Precione **Enviar** e aguarde a extração dos dos tokens. 
+Digite no campo *Figma Token* o token de acesso e no campo *Figma ID* o id do arquivo do seu projeto. Precione **Enviar** e aguarde a extração dos seus componentes. 
 
-Para gerar o arquivo **scss** com todos os tokens precione **Gerar Arquivo**. O arquivo será gerado na pasta *src/tokens*.
+Para gerar o arquivo **scss** com todos os estilos precione **Gerar Arquivo**. O arquivo será gerado na pasta *src/components*.
 
 
 ## Links úteis
