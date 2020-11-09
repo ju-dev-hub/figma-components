@@ -15,6 +15,15 @@
   src: url(./fonts/Montserrat-Regular.ttf);
 }
 
+body {
+  background-color: $primaria-aço-400;
+  background-image: url('./img/road.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: right;
+  background-position-y: top;
+}
+
 button,
 input,
 :focus {

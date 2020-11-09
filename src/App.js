@@ -45,7 +45,7 @@ function App() {
             />
           </div>
           <div className="form-submit">
-            <button type="submit" className="button-primary">{loading ? 'AGUARDE...' : 'ENVIAR'}</button>
+            <button type="submit" className={loading ? 'button-disabled' : 'button-primary'} >{loading ? 'AGUARDE' : 'ENVIAR'}</button>
           </div>
         </form>
       </div>
