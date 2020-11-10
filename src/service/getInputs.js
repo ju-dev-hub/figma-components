@@ -12,7 +12,6 @@ export const getInputs = async (frames) => {
         })
 
         _.map(inputs, (i, k) => {
-
             const label = inputs[k].filter(d => d.name === 'label')
             const background = inputs[k].filter(d => d.name === 'background')
 
@@ -25,9 +24,8 @@ export const getInputs = async (frames) => {
             const textColor = formatColor(color.r, color.g, color.b, color.a)
 
             data.push({
-                label: label[0].name,
+                characters: label[0].characters,
                 textColor,
-                opacity: label[0].opacity,
                 style: label[0].style,
                 cornerRadius: background[0].cornerRadius,
                 border: {
@@ -72,28 +70,27 @@ const formatCSS = (data) => {
 
     _.map(data, (i, k) => {
         css.push(`
-            .input-${data[k].label}            
+            .input-${data[k].characters.toLowerCase()}            
                 {
                     border-radius: ${data[k].cornerRadius}px;
                     border: ${data[k].border.strokeWeight}px ${data[k].border.type.toLowerCase()} ${data[k].border.borderColor};
                     height: ${data[k].height}px;
                     text-align: ${data[k].style.textAlignHorizontal.toLowerCase()};
                     padding: 0px ${data[k].padding}px;
-
-                    .${data[k].label}{
-                        opacity: ${data[k].opacity};
-                        color: ${data[k].textColor};
-                        font-family: '${data[k].style.fontFamily}';
-                        font-size: ${data[k].style.fontSize}px;
-                        font-weight: ${data[k].style.fontWeight};
-                        letter-spacing: ${data[k].style.letterSpacing}px;
-                    }
+                    color: ${data[k].textColor};
+                    font-family: '${data[k].style.fontFamily}';
+                    font-size: ${data[k].style.fontSize}px;
+                    font-weight: ${data[k].style.fontWeight};
+                    letter-spacing: ${data[k].style.letterSpacing}px;
                 }
-        `)
+
+                ${data[k].characters.toLowerCase().includes('placeholder') ? `input[value=""]{
+                    border: ${data[k].border.strokeWeight}px ${data[k].border.type.toLowerCase()} ${data[k].border.borderColor};
+                    color: ${data[k].textColor};
+                    opacity: ${data[k].opacity ? data[k].opacity : 1};
+                }` : ''}               
+            `)
         return css
     })
     return css
 }
-
-
-

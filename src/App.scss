@@ -33,7 +33,7 @@ input,
 .form-container {
   width: 400px;
   margin: $spacing-xm auto;
-  padding: $spacing-xxm;
+  padding: $spacing-m $spacing-xxm $spacing-xxm;
   color: $primaria-aço-A300;
   border: 1px solid $primaria-aço-100;
   border-radius: $border-radius-s;
@@ -41,15 +41,16 @@ input,
   font-size: $font-size-6;
   box-shadow: $shadow-regular;
   font-family: $rubik-regular;
-  line-height: $spacing-l;
+  line-height: $spacing-xxm;
 }
 
 .form-input {
   display: grid;
+  margin-top: $spacing-m;
 
   label {
     font-family: $montserrat-bold;
-    font-size: $font-size-5;
+    font-size: $font-size-7;
   }
 }
 

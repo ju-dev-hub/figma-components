@@ -31,7 +31,7 @@ function App() {
         <form onSubmit={handleSubmit}>
           <div className="form-input">
             <label htmlFor="token">Figma Token</label>
-            <input className="input-label" type="text" name="token" id="token" placeholder="Digite o seu figma token"
+            <input className="input-default" type="text" name="token" id="token" placeholder="Digite o seu figma token"
               onChange={e => setToken(e.target.value)}
               value={figmaApiKey}
             />
@@ -39,7 +39,7 @@ function App() {
 
           <div className="form-input">
             <label htmlFor="figmaId">Figma ID</label>
-            <input className="input-label" type="text" name="figmaId" id="figmaId" placeholder="Digite o seu figma ID"
+            <input className="input-default" type="text" name="figmaId" id="figmaId" placeholder="Digite o seu figma ID"
               onChange={e => setFigmaId(e.target.value)}
               value={figmaId}
             />
